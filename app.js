@@ -29,8 +29,10 @@ async function start(){
    await loadMore(page, '.dCJp8'); 
    const arrobasEmComentarios = await getComment(page, '.C4VMK span a');   
    const arrobasOrdenados = ordenar(count(arrobasEmComentarios));   
-   for (let index = 0; index < arrobasOrdenados.length; index++) {
-        console.log(`%c  ${index}o Lugar: ${arrobasOrdenados[index]}`,'color:red');       
+   for (let index = 0; index < arrobasOrdenados.length; index++) {      
+        console.log('\x1b[36m',
+         `${index}o Lugar: ${arrobasOrdenados[index].arroba}, quantidade:${arrobasOrdenados[index].qtd}` ,
+         '\x1b[0m');
    }    
    await browser.close();
 }
